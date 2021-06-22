@@ -75,7 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll("img");
     const optionOneId = cardsChosenId[0];
     const optionTwoId = cardsChosenId[1];
-    if (cardsChosen[0] === cardsChosen[1]) {
+    if (
+      cardsChosen[0] === cardsChosen[1] &&
+      cardsChosenId[0] !== cardsChosenId[1]
+    ) {
       alert("You found a match");
       cards[optionOneId].setAttribute("src", "images/white.jpg");
       cards[optionTwoId].setAttribute("src", "images/white.jpg");
@@ -89,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsChosenId = [];
     resultDisplay.textContent = cardWon.length;
     if (cardWon.length === cardArray.length / 2) {
-      resultDisplay.textContent = "Congratulation! You found them all!";
+      resultDisplay.textContent = `Congratulation! You found them all!`;
     }
   }
 
